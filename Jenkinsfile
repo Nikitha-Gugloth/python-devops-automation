@@ -17,7 +17,7 @@ pipeline {
 
         stage('Run Application') {
             steps {
-                bat '"C:\Users\maruthi\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe" run --rm python-devops-automation'
+                bat '"C:\Users\maruthi\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe" run --rm python-devops-automation .'
             }
         }
     }
