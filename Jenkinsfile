@@ -11,13 +11,13 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'docker build -t python-devops-automation .'
+                bat '"C:\\Users\\maruthi\\AppData\\Local\\Programs\\Docker\\Docker\\resources\\bin\\docker.exe" build -t python-devops-automation .'
             }
         }
 
         stage('Run Application') {
             steps {
-                bat 'docker run --rm python-devops-automation'
+                bat '"C:\\Users\\maruthi\\AppData\\Local\\Programs\\Docker\\Docker\\resources\\bin\\docker.exe" run --rm python-devops-automation'
             }
         }
     }
