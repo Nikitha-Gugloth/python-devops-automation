@@ -11,21 +11,23 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat '"C:\Users\maruthi\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe" build -t python-devops-automation .'
+                bat 'docker --version'
+                bat 'docker build -t python-devops-automation .'
             }
         }
 
         stage('Run Application') {
             steps {
-                bat '"C:\Users\maruthi\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe" run --rm python-devops-automation .'
+                bat 'docker run --rm python-devops-automation'
             }
         }
     }
 
     post {
         success {
-            echo 'BUILD SUCCESSFUL - Application ran successfully!'
+            echo 'BUILD SUCCESSFUL - Application completed successfully!'
         }
+
         failure {
             echo 'BUILD FAILED - Please check the console output.'
         }
